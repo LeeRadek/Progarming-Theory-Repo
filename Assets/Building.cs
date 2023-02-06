@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
-    
+    [SerializeField]
+    Canvas canvas;
+    [SerializeField]
     Slider slider;
+    [SerializeField]
     Text text;
     [SerializeField]
     protected new string name;
@@ -29,13 +32,20 @@ public class Building : MonoBehaviour
 
     void GetRef()
     {
-        slider = GetComponentInChildren<Slider>();
-        text = GetComponentInChildren<Text>();
+        canvas = GetComponentInChildren<Canvas>();
+        
     }
 
-    void SetName()
+    protected void SetName()
     {
 
         text.text = name;
+    }
+
+    public void ShowLabel()
+    {
+        
+        canvas.transform.GetChild(0).gameObject.SetActive(!canvas.transform.GetChild(0).gameObject.activeSelf);
+        
     }
 }

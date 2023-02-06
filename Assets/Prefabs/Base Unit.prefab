@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6647946310282493120
+--- !u!1 &963653279816361606
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6072725923295767932}
-  - component: {fileID: 4119018681447857651}
-  - component: {fileID: 3711636116609763363}
-  - component: {fileID: 9104391860711619636}
-  - component: {fileID: 4775600076898735240}
+  - component: {fileID: 1179214050726233231}
+  - component: {fileID: 2210641838831234639}
+  - component: {fileID: 4812073789957194998}
+  - component: {fileID: 2538020283342789310}
+  - component: {fileID: 60614842}
+  - component: {fileID: 60614847}
   m_Layer: 0
-  m_Name: Base Building
-  m_TagString: Building
+  m_Name: Base Unit
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6072725923295767932
+--- !u!4 &1179214050726233231
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6647946310282493120}
+  m_GameObject: {fileID: 963653279816361606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1706919600726045652}
+  - {fileID: 4355552759388468452}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4119018681447857651
+--- !u!33 &2210641838831234639
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6647946310282493120}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3711636116609763363
+  m_GameObject: {fileID: 963653279816361606}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4812073789957194998
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6647946310282493120}
+  m_GameObject: {fileID: 963653279816361606}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,39 +87,66 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9104391860711619636
-BoxCollider:
+--- !u!136 &2538020283342789310
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6647946310282493120}
+  m_GameObject: {fileID: 963653279816361606}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4775600076898735240
+--- !u!114 &60614842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6647946310282493120}
+  m_GameObject: {fileID: 963653279816361606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e713d6139773a44a8922031f139a73, type: 3}
+  m_Script: {fileID: 11500000, guid: d0a2200cceb0bb242a7a3e3c3a73f139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Base building
---- !u!1001 &3530711778309205113
+  name: Base Unit
+--- !u!195 &60614847
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963653279816361606}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!1001 &1962902973580798793
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 6072725923295767932}
+    m_TransformParent: {fileID: 1179214050726233231}
     m_Modifications:
+    - target: {fileID: 912099001356247930, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2743727835313843859, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -181,15 +209,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -197,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.902
+      value: 2.5020142
       objectReference: {fileID: 0}
     - target: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -215,14 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7066849790552858144, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
---- !u!224 &1706919600726045652 stripped
+--- !u!224 &4355552759388468452 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2832669550355750829, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
-  m_PrefabInstance: {fileID: 3530711778309205113}
+  m_PrefabInstance: {fileID: 1962902973580798793}
   m_PrefabAsset: {fileID: 0}
