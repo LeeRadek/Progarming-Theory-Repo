@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Unit : Building
+public class Unit : Building //inheritence
 {
     NavMeshAgent agent;
 
@@ -26,7 +26,7 @@ public class Unit : Building
         agent = GetComponent<NavMeshAgent>();
     }
 
-    public virtual void Move(Vector3 point)
+    public virtual void Move(Vector3 point)//Polimoprhism
     {
         agent.SetDestination(point);
     }

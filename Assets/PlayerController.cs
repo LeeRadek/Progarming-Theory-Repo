@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
                 {
                     return;
                 }
-                Debug.DrawLine(Camera.main.transform.position, hit.point, Color.green, 2);
-                units[0].Move(hit.point);
+                
+                units[0].Move(hit.point);//Polimorphism
             }
         }
     }

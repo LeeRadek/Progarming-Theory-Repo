@@ -17,14 +17,14 @@ public class Building : MonoBehaviour
     public int maxHealth;
     public int minHealth { get; private set; }
     protected int Health;
-    public int health { get; private set; }
+    public int health { get; private set; }//Encapsulation
 
 
     void Awake()
     {
-        GetRef();
-        SetName();
-        HideLabel();
+        GetRef();//Abstraction
+        SetName();//Abstraction
+        HideLabel();//Abstraction
     }
 
     private void Start()
