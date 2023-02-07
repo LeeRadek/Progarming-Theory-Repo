@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9104391860711619636}
   - component: {fileID: 4775600076898735240}
   m_Layer: 0
-  m_Name: Base Building
+  m_Name: TownHall
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9401fdc8bf94f154d97fc569a1b9790a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e713d6139773a44a8922031f139a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasParent: {fileID: 0}
+  canvas: {fileID: 0}
   slider: {fileID: 0}
   text: {fileID: 0}
   name: Base building
@@ -122,10 +122,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6072725923295767932}
     m_Modifications:
-    - target: {fileID: 912099001356247930, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2743727835313843859, guid: 730596664cd19e349929a28fd78cfd74, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

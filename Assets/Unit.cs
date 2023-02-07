@@ -10,7 +10,9 @@ public class Unit : Building
     void Awake()
     {
         GetAgent();
+        GetRef();
         SetName();
+        HideLabel();
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class Unit : Building
     {
         if(collision.collider.tag == "Building")
         {
-            //agent.isStopped = true;
+            agent.isStopped = true;
         }
     }
 }

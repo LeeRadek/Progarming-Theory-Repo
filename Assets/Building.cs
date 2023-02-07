@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Building : MonoBehaviour
 {
     [SerializeField]
-    Canvas canvas;
+    GameObject canvasParent;
     [SerializeField]
     Slider slider;
     [SerializeField]
@@ -14,14 +14,25 @@ public class Building : MonoBehaviour
     [SerializeField]
     protected new string name;
     
-    int maxHealth;
-    int minHealth;
-    int health;
+    public int maxHealth { get; private set; }
+    public int minHealth { get; private set; }
+    public int health
+    {
+        get { return health; }
+        set { Mathf.Clamp(value, minHealth, maxHealth); }
+    }
 
     void Awake()
     {
         GetRef();
         SetName();
+        HideLabel();
+    }
+
+    private void Start()
+    {
+        minHealth = 0;
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -30,22 +41,32 @@ public class Building : MonoBehaviour
         
     }
 
-    void GetRef()
+    protected void GetRef()
     {
-        canvas = GetComponentInChildren<Canvas>();
+        canvasParent = transform.GetChild(0).gameObject;
+        slider = canvasParent.GetComponentInChildren<Slider>();
+        text = canvasParent.GetComponentInChildren<Text>();
         
     }
 
     protected void SetName()
     {
-
+        if(name == null)
+        {
+            name = gameObject.name;
+        }
         text.text = name;
     }
 
     public void ShowLabel()
     {
         
-        canvas.transform.GetChild(0).gameObject.SetActive(!canvas.transform.GetChild(0).gameObject.activeSelf);
+        canvasParent.transform.GetChild(0).gameObject.SetActive(!canvasParent.transform.GetChild(0).gameObject.activeSelf);
         
+    }
+
+    protected void HideLabel()
+    {
+        canvasParent.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

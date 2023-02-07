@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckObject();
         MoveTo();
+
     }
 
     void CheckObject()
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
                 if(hit.collider.gameObject.tag == "Ground")
                 {
+                    
                     ClearSlection();
                 }
             }
