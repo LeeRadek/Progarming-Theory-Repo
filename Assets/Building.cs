@@ -13,14 +13,12 @@ public class Building : MonoBehaviour
     Text text;
     [SerializeField]
     protected new string name;
-    
-    public int maxHealth { get; private set; }
+    [SerializeField]
+    public int maxHealth;
     public int minHealth { get; private set; }
-    public int health
-    {
-        get { return health; }
-        set { Mathf.Clamp(value, minHealth, maxHealth); }
-    }
+    protected int Health;
+    public int health { get; private set; }
+
 
     void Awake()
     {
@@ -33,6 +31,10 @@ public class Building : MonoBehaviour
     {
         minHealth = 0;
         health = maxHealth;
+        slider.minValue = 0;
+        slider.maxValue = maxHealth;
+        slider.value = health;
+        
     }
 
     // Update is called once per frame
